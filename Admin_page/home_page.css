@@ -1,0 +1,396 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, Sans-Serif;
+    overflow-x: hidden;
+  }
+  header{
+    width: 100%;
+  }
+  .nav_login
+  footer{
+    width: 100%;
+    /* border: 40px solid rgb(161, 88, 100); */
+  }
+  nav div {
+    display: flex;
+  }
+  nav {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: flex-end;
+    border-bottom: 1px solid rgba(219, 221, 225);
+  }
+  nav > div {
+    width: 32%;
+  }
+  nav > div > div {
+    justify-content: center;
+    align-items: center;
+  }
+  .parent_nav > div div {
+    padding: 5px;
+  }
+  nav > div > div:nth-child(1) {
+    flex: 1;
+  }
+  nav > div > div:nth-child(2) {
+    flex: 0.6;
+  }
+  nav > div > div:nth-child(3) {
+    flex: 0.8;
+  }
+  nav > div > div:nth-child(4) {
+    flex: 0.8;
+  }
+  .rotate {
+    transform: rotate(90deg);
+  }
+  .left_arrow{
+    transform: rotate(180deg);
+  
+  }
+  .right_arrow{
+    transform: rotate(360deg);
+  
+  }
+  nav p {
+    width: 100%;
+    font-size: 14px;
+  }
+  .a
+  login p {
+    text-align: center;
+  }
+  .parent_nav > div:hover {
+    background: rgb(243, 244, 245);
+    cursor: pointer;
+  }
+  
+  .menu_options {
+    display: none;
+  }
+  .nav_menu:hover .menu_options {
+    display: block;
+    position: absolute;
+    background: white;
+    top: 62px;
+    left: 83%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 2;
+    border-radius: 10px;
+    width: 11%;
+    padding-left: 20px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+      rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  }
+  .menu_options p {
+    font-family: Proxima Vara, Arial, Helvetica, Sans, Sans-Serif;
+    font-size: 14px;
+  }
+  
+
+   
+
+  /* ---------------------------------------------------------------------- */
+
+  .welcome_admin {
+    display: flex;
+    width: 73%;
+    margin: auto;
+    margin-top: 40px;
+    align-items: center;
+    gap: 40px;
+  }
+  .welcome_message {
+    display: flex;
+    flex-direction: column;
+  }
+  .welcome_admin_first {
+    font-size: 24px;
+    font-weight: 700;
+    font-family: Arial, Helvetica, Sans-Serif;
+  }
+  .welcome_div_second {
+    margin-top: -10px;
+  }
+
+/* ------------------------------CATEGORY DIV-------------------------------*/
+.item {
+    width: 100%;
+    background-color: rgb(243, 244, 245);
+    margin: 30px auto;
+    padding: 40px 30px  40px; /* Top, right & left, bottom */
+}
+
+ .item > div:nth-child(1) > p {
+    font-size: 20px;
+    font-weight: 700;
+    font-family: Arial, Helvetica, Sans-Serif;
+  }
+ .item > div:nth-child(2) {
+    width: 98%;
+    margin: auto;
+  }
+  .containerItemCategory {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+
+   }
+   
+   .containerItemCategory > div {
+    overflow: hidden;
+    border-radius: 10px;
+   }
+   
+   .containerItemCategory img {
+    width: 70%;
+    height: auto;
+  
+   }
+   
+   .titleOfEachCategory {
+    margin: 0;
+    padding: 10px;
+    text-align: start;
+   }
+.category_title {
+    display: grid;
+    padding-left: 20px;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    gap: 10px;
+    align-items: center;
+}
+
+.addbutton {
+    display: flex;
+    align-items: flex-end;
+}
+
+/* ========================================================================= */
+
+.button-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.addbutton button,
+.category-dropdown button {
+  font-size: 16px;
+  border-radius: 5px;
+  padding: 14px 25px;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.addbutton button:hover,
+.category-dropdown button:hover {
+  background-color: #483df6;
+}
+
+.category-dropdown {
+  display: inline-block;
+  position: relative;
+}
+
+.category-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 5px;
+}
+
+.category-dropdown:hover .category-dropdown-content {
+  display: block;
+}
+
+.category-dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.category-dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.item-list-container {
+  padding: 20px;
+}
+
+.item-list {
+  background-color: rgb(243, 244, 245);
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  margin-right: 40px;
+  /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); */
+}
+
+.item-padding {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-radius: 20px;
+  background-color: #ffffff;
+  border: 5px solid rgb(243, 244, 245);
+}
+.item-padding span {
+  max-inline-size: 200px;
+  margin: 20px; /* Adjust the space between spans as needed */
+}
+
+.item-padding span:last-child {
+  margin-right: 0; /* Remove margin-right for the last span */
+}
+.item-buttons {
+  display: flex;
+  align-items: center;
+}
+
+
+.item-buttons button {
+  font-size: 14px;
+  border-radius: 3px;
+  padding: 8px 15px;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.item-buttons button.update-btn {
+  background-color: #FF8C00;
+  color: #f1f1f1;
+  font-weight: bold;
+  
+}
+
+.item-buttons button.delete-btn {
+  background-color: #DC143C;
+  color: #f1f1f1;
+  font-weight: bold;
+
+}
+
+.item-buttons button:hover {
+  background-color: #ddd;
+}
+
+.item-padding span:not(:last-child) {
+  border-right: 2px solid #ddd;
+  padding-right: 10px; /* Adjust the space between the border and text */
+  padding-left: 10px;
+}
+/* ==============================delete button style============================ */
+/* Set a style for all buttons */
+delete-button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+delete-button:hover {
+  opacity:1;
+}
+
+/* Float cancel and delete buttons and add an equal width */
+.cancelbtn, .deletebtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add a color to the cancel button */
+.cancelbtn {
+  background-color: #ccc;
+  color: black;
+}
+
+/* Add a color to the delete button */
+.deletebtn {
+  background-color: #f44336;
+}
+
+/* Add padding and center-align text to the container */
+.delete-container {
+  padding: 16px;
+  text-align: center;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* Style the horizontal ruler */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+ 
+/* The Modal Close Button (x) */
+.close {
+  position: absolute;
+  right: 35px;
+  top: 15px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #f1f1f1;
+}
+
+.close:hover,
+.close:focus {
+  color: #f44336;
+  cursor: pointer;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Change styles for cancel button and delete button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn, .deletebtn {
+     width: 100%;
+  }
+}
