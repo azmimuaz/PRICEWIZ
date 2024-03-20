@@ -1461,19 +1461,19 @@ pre {
 .table-danger,
 .table-danger > th,
 .table-danger > td {
-  background-color: #f5c6cb; }
+  background-color: #258f2d; }
 
 .table-danger th,
 .table-danger td,
 .table-danger thead th,
 .table-danger tbody + tbody {
-  border-color: #ed969e; }
+  border-color: #258f2d; }
 
 .table-hover .table-danger:hover {
-  background-color: #f1b0b7; }
+  background-color: #258f2d; }
   .table-hover .table-danger:hover > td,
   .table-hover .table-danger:hover > th {
-    background-color: #f1b0b7; }
+    background-color: #258f2d; }
 
 .table-light,
 .table-light > th,

@@ -18,15 +18,54 @@
 </head>
 <?php
 
-$fullnameP = $_POST["fullName"];
-$usernameP = $_POST["userName"];
-$passwordP = $_POST["password"];
+$year = $_POST["price_date"];
+$overallPrices = $_POST["overall"];
+$foodBeveragePrices = $_POST["food_beverage"];
+$householdEquipmentPrices = $_POST["housing_utilities"];
+$clothingFootwearPrices = $_POST["clothing_footwear"];
+$furnishingPrices  =$_POST["furnishings"];
+$healthPrices = $_POST["health"];
+
+
+
 
 
 ?>
 <body>
     <h2> INSERTED ITEM DETAILS</h2>
-
+    <br>
+    <table>
+        <tr>
+            <td>Data date: </td>
+            <td><b><?php echo $year; ?></b></td>
+        </tr>
+        <tr>
+            <td>Overall Price: </td>
+            <td><b><?php echo $overallPrices; ?></b></td>
+        </tr>
+        <tr>
+            <td>Food & Beverage Price: </td>
+            <td><b><?php echo $foodBeveragePrices; ?></b></td>
+        </tr>
+        <tr>
+            <td>Clothing Price: </td>
+            <td><b><?php echo $householdEquipmentPrices; ?></b></td>
+        </tr>
+        <tr>
+            <td>Household Price: </td>
+            <td><b><?php echo $clothingFootwearPrices; ?></b></td>
+        </tr>
+        <tr>
+            <td>Furnishing Price: </td>
+            <td><b><?php echo $furnishingPrices; ?></b></td>
+        </tr>
+        <tr>
+            <td>Health Price: </td>
+            <td><b><?php echo $healthPrices; ?></b></td>
+        </tr>
+        
+    </table>
+    <br>
 
     <?php
     $host = "localhost";
@@ -45,8 +84,8 @@ $passwordP = $_POST["password"];
     }
     else
     {
-        $queryInsert = "INSERT INTO user (full_name, user_name,user_pwd,) VALUES
-        ('".$fullnameP."','".$usernameP."','".$passwordP."',)";
+        $queryInsert = "INSERT INTO cpi_core (price_date, overall, food_beverage, housing_utilities, clothing_footwear, furnishings, health) VALUES
+        ('".$year."','".$overallPrices."','".$foodBeveragePrices."','".$householdEquipmentPrices."','".$clothingFootwearPrices."','".$furnishingPrices."','".$healthPrices."')";
     
         if($conn->query($queryInsert) === TRUE)
         {
@@ -69,7 +108,7 @@ $passwordP = $_POST["password"];
 		color: white;
 		cursor: pointer;
 		margin-top: 25px;">
-		Add More Item</button></a>
+		Add More Data</button></a>
 
         <a href="home_page.php"><button    
 		style=" font-size: 16px;

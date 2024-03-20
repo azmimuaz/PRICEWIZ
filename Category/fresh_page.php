@@ -6,9 +6,13 @@
     <title>PRICEWIZ</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
     <link href="\PRICEWIZ\index.css" rel="stylesheet">
     <link rel="stylesheet" href="../top_nav.css">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
     <style>
         main {
@@ -93,7 +97,7 @@
         }
 
         .adtocart {
-            background: #fc5959;
+            background: #258f2d;
             width: 50px;
             height: 50px;
             border-radius: 50%;
@@ -102,7 +106,7 @@
             display: inline-block;
             text-align: center;
             border: 3px solid #fff;
-            left: 45%;
+            left: 42%;
             bottom: -25px;
             position: absolute;
         }
@@ -183,13 +187,23 @@
         }
 
         .pro-d-head {
-            font-size: 18px;
+            font-size: 22px;
             font-weight: 300;
         }
 
         .keyword-search {
             margin-bottom: 20px;
         }
+        .screenShotImg {
+            margin-top: 10px; /* Adjust spacing between each item */
+            display: flex;
+            align-items: center; /* Align items vertically */
+        }
+
+        .screenShotImg img {
+            margin-right: 10px; /* Adjust spacing between image and price */
+        }
+
 
     </style>
     <!-- Add this script inside the head section of your HTML -->
@@ -255,28 +269,43 @@
         <div class="col-mb-3">
             <section class="panel">
                 <div class="panel-body">
-                <div class="col-md-3">   
-                    <div class="panel-body keyword-search">
-                        <input type="text" placeholder="Keyword Search" class="form-control" />
-                    </div>
+                <div class="col-md-3">
+                <h4><b>Category: Fresh Product</b></h4>
+
                 </div>
                     <div class="pull-right">
-                        <ul class="pagination pagination-sm pro-page-list">
-                            <li><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">»</a></li>
-                        </ul>
-                        <br>
-                        <br>
-                        <div class="nav_cart">
-                            <!-- Update the link to prevent default behavior -->
-                            <button onclick="sendCartToServer();" 
-                            style="padding: 10px 20px;
-                             background-color: #258f2d;
-                             color: #fff;
-                             border: none;
-                             cursor: pointer; border-radius: 5px;">View Cart Calculator</button>
+                        
+                        <div class='text-right ml-2'>
+                            <li class="nav-item dropdown">
+      
+                                <div class="dropdown" style="width: 300px;">
+                                        <button type="button" class="btn btn-info" data-toggle="dropdown" style="background-color: #258f2d">
+                                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>    View Cart <span id="totalQuantityBadge"class="badge badge-pill badge-danger">0</span>
+                                        </button>
+                                        <div class="dropdown-menu" style="width: 300px;">
+                                            <div class="row total-header-section">
+                                                
+                                            </div>
+                                            <div id="cart">
+                                                <h4>Selected Items</h4>
+                                                
+                                                <div id="cart-items" style="margin: 10px; padding: 10px; border-bottom: 1px solid #ccc;"></div>
+                                                <br>
+                                            </div>
+                                            
+                                            <div class="nav_cart" style="text-align: center;">
+                                                <!-- Update the link to prevent default behavior -->
+                                                <button onclick="sendCartToServer();" 
+                                                        style="padding: 10px 10px;
+                                                            background-color: #258f2d;
+                                                            color: #fff;
+                                                            border: none;
+                                                            cursor: pointer;
+                                                            border-radius: 5px;">View Cart Calculator</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </li>
                         </div>
                     </div>
                     
@@ -284,69 +313,85 @@
             </section>
 
             <div class="row product-list">
-                <?php
-                $count = 0;
-                while ($row = $result->fetch_assoc()) {
-                ?>
-                    <div class="col-md-3">
-                        <section class="panel">
-                            <div class="pro-img-box">
-                                <span><img src="<?php echo $row['item_image']; ?>" alt="Item Image" style="width: 230px; height: 200px;"></span>
-                                <a href="#" class="adtocart" onclick="addToCart('<?php echo $row['item_name']; ?>', <?php echo $row['item_price1']; ?>)">
-                                    <i class="fa fa-shopping-cart"></i>
-                                </a>
-                            </div>
-                            <div class="panel-body text-center">
-                                <h4>
-                                    <a href="#" class="pro-title">
-                                        <span><?php echo $row['item_name']; ?> </span>
-                                    </a>
-                                </h4>
-                                <div class="screenShotImg">
-                                    <img src="https://vectorlogo4u.com/wp-content/uploads/2021/08/lotuss-logo-vector-01.png" alt="Lotus" style="height: 70px; width: 150px" />
-                                    <p class="price">
-                                        <span>RM<?php echo $row['item_price1']; ?></span>
-                                    </p>
-                                </div>
-
-                                <div class="screenShotImg">
-                                    <img data-testid="advertiser-image" src="/PRICEWIZ/projectImage/mydin-logo.png" alt="Mydin" class="flex-grow-0 flex-shrink-0 AdvertiserImage_image__bArcZ" style="height: 70px; width: 140px" />
-                                    <p class="price">
-                                        <span>RM<?php echo $row['item_price2']; ?></span>
-                                    </p>
-                                </div>
-
-                                <div class="screenShotImg">
-                                    <img data-testid="advertiser-image" src="/PRICEWIZ/projectImage/PasarRaya-CS-logo.png" alt="PasarRaya CS" class="flex-grow-0 flex-shrink-0 AdvertiserImage_image__bArcZ" style="height: 30px; width: 70px" />
-                                    <p class="price">
-                                        <span>RM<?php echo $row['item_price3']; ?></span>
-                                    </p>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-                <?php
-                    $count++;
-                }
-                ?>
+            <?php
+$count = 0;
+while ($row = $result->fetch_assoc()) {
+    // Determine the lowest price among the item prices
+    $lowestPrice = min($row['item_price1'], $row['item_price2'], $row['item_price3']);
+    ?>
+    <div class="col-md-3">
+        <section class="panel">
+            <div class="pro-img-box text-center">
+                <span><img src="<?php echo $row['item_image']; ?>" alt="Item Image" style="width: 230px; height: 200px; align-items-center"></span>
+                <a href="#" class="adtocart" onclick="addToCart(
+                        '<?php echo $row['item_image']; ?>',
+                        '<?php echo $row['item_name']; ?>',
+                        <?php echo $row['item_price1']; ?>, 
+                        <?php echo $row['item_price2']; ?>, 
+                        <?php echo $row['item_price3']; ?>,
+                        '<?php echo $row['category_ID']; ?>'
+                    )">
+                    <i class="fa fa-shopping-cart"></i>
+                </a>
             </div>
+            <div class="panel-body text-center">
+                <h4>
+                    <a href="#" class="pro-title" style="font-size: 17px">
+                        <span><?php echo $row['item_name']; ?></span>
+                    </a>
+                </h4>
+                <div class="screenShotImg">
+                    <img src="\PRICEWIZ\projectImage\logo_lotus.png" alt="Lotus" style="height: 20px; width: 60px" />
+                    <p class="price" style="font-size: 16px">
+                        <span style="color: <?php echo $row['item_price1'] == $lowestPrice ? 'green' : 'red'; ?>"><b>RM<?php echo $row['item_price1']; ?></b></span>
+                    </p>
+                </div>
+                <div class="screenShotImg">
+                    <img data-testid="advertiser-image" src="\PRICEWIZ\projectImage\Logo_of_Mydin.png" alt="Mydin" class="flex-grow-0 flex-shrink-0 AdvertiserImage_image__bArcZ" style="height: 20px; width: 60px" />
+                    <p class="price" style="font-size: 16px">
+                        <span style="color: <?php echo $row['item_price2'] == $lowestPrice ? 'green' : 'red'; ?>"><b>RM<?php echo $row['item_price2']; ?></b></span>
+                    </p>
+                </div>
+                <div class="screenShotImg">
+                    <img data-testid="advertiser-image" src="/PRICEWIZ/projectImage/PasarRaya-CS-logo.png" alt="PasarRaya CS" class="flex-grow-0 flex-shrink-0 AdvertiserImage_image__bArcZ" style="height: 30px; width: 60px" />
+                    <p class="price" style="font-size: 16px">
+                        <span style="color: <?php echo $row['item_price3'] == $lowestPrice ? 'green' : 'red'; ?>"><b>RM<?php echo $row['item_price3']; ?></b></span>
+                    </p>
+                </div>
+            </div>
+        </section>
+    </div>
+<?php
+    $count++;
+}
+?>
+
+            </div>
+            
             </main>
-<!-- Shopping Cart -->
-<div id="cart">
-    <h2>Shopping Cart</h2>
-    <ul id="cart-items"></ul>
-    <p>Total: RM<span id="total">0.00</span></p>
-</div>
+
 
 <script>
     var cart = []; // Array to store cart items
 
-    function addToCart(itemName, itemPrice) {
-        // Add item to the cart array
-        cart.push({ name: itemName, price: itemPrice });
+    function addToCart(itemImage, itemName, itemPrice1, itemPrice2, itemPrice3, itemCategory) {
+        // Check if the item already exists in the cart
+        var existingItem = cart.find(function(item) {
+            return item.name === itemName;
+            return item.image === itemImage;
+        });
+
+        if (existingItem) {
+            // Update the quantity of the existing item
+            existingItem.quantity++;
+        } else {
+            // Add the item to the cart array
+            cart.push({image: itemImage, name: itemName, price1: itemPrice1, price2: itemPrice2, price3: itemPrice3, category: itemCategory, quantity: 1 });
+        }
 
         // Update the cart display
         updateCart();
+        window.location.href = "/PRICEWIZ/cart_page.php?cart_data=" + JSON.stringify(cart);
     }
 
     function updateCart() {
@@ -356,47 +401,69 @@
         // Clear existing cart items
         cartElement.innerHTML = '';
 
+        // Initialize total for each price
+        var totalLotus = 0;
+        var totalMydin = 0;
+        var totalCS = 0;
+        var totalQuantity = 0;
+
         // Display each item in the cart
-        var total = 0;
         cart.forEach(function (item) {
+            // Create list item for the item with quantity
             var listItem = document.createElement('li');
-            listItem.textContent = item.name + ' - RM' + item.price.toFixed(2);
+            var quantityText = ' - Quantity: ' + item.quantity;
+            listItem.textContent = item.name + quantityText;
             cartElement.appendChild(listItem);
 
-            // Calculate the total price
-            total += item.price;
+            // Calculate total for each price and total quantity
+            totalLotus += item.price1 * item.quantity;
+            totalMydin += item.price2 * item.quantity;
+            totalCS += item.price3 * item.quantity;
+            totalQuantity += item.quantity;
         });
 
-        // Update the total in the cart
-        var totalElement = document.getElementById('total');
-        totalElement.textContent = total.toFixed(2);
+        // Update the total quantity display
+        var totalQuantityBadge = document.getElementById('totalQuantityBadge');
+        totalQuantityBadge.textContent = totalQuantity;
+
+        // Update the total in the cart for Lotus price
+        var totalElementLotus = document.getElementById('totalLotus');
+        totalElementLotus.textContent = totalLotus.toFixed(2);
+
+        // Update the total in the cart for Mydin price
+        var totalElementMydin = document.getElementById('totalMydin');
+        totalElementMydin.textContent = totalMydin.toFixed(2);
+
+        // Update the total in the cart for CS price
+        var totalElementCS = document.getElementById('totalCS');
+        totalElementCS.textContent = totalCS.toFixed(2);
     }
 
     function sendCartToServer() {
-    // Convert the cart array to a JSON string
-    var cartData = JSON.stringify(cart);
+        // Convert the cart array to a JSON string
+        var cartData = JSON.stringify(cart);
 
-    // Create a form element
-    var form = document.createElement('form');
-    form.method = 'post';
-    form.action = '/PRICEWIZ/cart_page.php';
+        // Create a form element
+        var form = document.createElement('form');
+        form.method = 'post';
+        form.action = '/PRICEWIZ/cart_page.php';
 
-    // Create an input field to store the cart data
-    var input = document.createElement('input');
-    input.type = 'hidden';
-    input.name = 'cart_data';
-    input.value = cartData;
+        // Create an input field to store the cart data
+        var input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = 'cart_data';
+        input.value = cartData;
 
-    // Append the input field to the form
-    form.appendChild(input);
+        // Append the input field to the form
+        form.appendChild(input);
 
-    // Append the form to the document and submit it
-    document.body.appendChild(form);
-    form.submit();
-}
-
-
+        // Append the form to the document and submit it
+        document.body.appendChild(form);
+        form.submit();
+    }
 </script>
+
+
 
 
 </body>

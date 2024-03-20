@@ -19,7 +19,7 @@ body {
 
   .welcome_div {
     display: flex;
-    width: 73%;
+    width: 55%;
     margin: auto;
     margin-top: 40px;
     align-items: center;
@@ -38,7 +38,6 @@ body {
 .welcome_div_second {
   margin-top: -10px;
 }
-/* ------------------------------------------------------------------------- */
 
  /* -----------------------FUNCTIONAL DIV ---------------------------- */
  .x_inSearch{
@@ -51,8 +50,9 @@ body {
   width: 99%;
   background-color: #f0f8f0;
   margin: 30px auto;
-  padding-top: 40px;
-  padding-bottom: 25px;
+  align-items: center;
+  padding-top: 50px;
+  padding-bottom: 55px;
 }
 
 
@@ -155,7 +155,8 @@ body {
  .category {
     width: 78%;
     margin: auto;
-    margin-top: 100px;
+    margin-top: 50px;
+    margin-bottom: 50px;
   }
  .category > div:nth-child(1) > p {
     font-size: 20px;
@@ -232,14 +233,15 @@ body {
   }
   .top_city:focus {
     border-bottom: 2px solid rgb(82, 124, 194);
-    color: rgb(82, 124, 194);
+    color:black;
+;
   }
   .top_city:focus > .containerForTopDestinations {
     display: none;
   }
   .top_destination:focus {
-    border-bottom: 2px solid rgb(82, 124, 194);
-    color: rgb(82, 124, 194);
+    border-bottom: 2px solid black;
+    color: black;
   }
   .top_destination {
     background-color: white;
@@ -252,8 +254,9 @@ body {
   }
   .topCityDestination_hr {
     margin-top: 0px;
+    margin-bottom: 20px;
     border: none;
-    border-bottom: 1px solid rgb(108, 112, 122);
+    border-bottom: 1.5px solid rgb(169, 171, 179);
   }
   .containerForCategory{
     display: grid;
@@ -266,13 +269,15 @@ body {
   .category-link {
     text-decoration: none; /* Remove underline from the link */
     color: inherit; /* Inherit text color from the parent */
+    
 }
 
 .category-container {
     display: inline-block; /* Display as inline-block so it wraps around the content */
-    border: 1px solid #ccc; /* Add border for styling */
+    border: 1.5px solid #ccc; /* Add border for styling */
     border-radius: 10px; /* Add border-radius for styling */
     overflow: hidden; /* Hide overflowing content (if any) */
+    
 }
 
 .category-container img {

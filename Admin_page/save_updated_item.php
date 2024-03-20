@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Azmi video list</title>
-<style>
-	body{
-	
-	}
-	input{
-		background-color: #F9E79F ;
-	}
-	select{
-		background-color: #F9E79F;
-	}
+    <title>Azmi video list</title>
+    <style>
+        body {
+        }
 
-</style>
+        input {
+            background-color: #F9E79F;
+        }
+
+        select {
+            background-color: #F9E79F;
+        }
+    </style>
 </head>
+
 <?php
 $item_ID = $_POST["item_ID"];
 $itemNameP = $_POST["itemName"];
@@ -27,8 +28,6 @@ $price3P = $_POST["price3"];
 $imageP = $_FILES["itemImage"]["name"];
 $targetDir = "../uploads/";  // specify the directory where you want to store uploaded files
 $targetFilePath = $targetDir . $imageP;
-
-
 
 // Move uploaded file to the specified directory
 move_uploaded_file($_FILES["itemImage"]["tmp_name"], $targetFilePath);
@@ -45,31 +44,22 @@ $db = "PRICEWIZ";
 
 $conn = new mysqli($host, $user, $password, $db);
 
-if ($conn->connect_error)
-{
-	die("Connection Error: " . $conn->connect_error);
-}
-else
-{
-	$queryUpdate = "UPDATE item_info SET item_name='".$itemNameP."', category_ID='".$categoryP."', item_price1='".$price1P."',
+if ($conn->connect_error) {
+    die("Connection Error: " . $conn->connect_error);
+} else {
+    $queryUpdate = "UPDATE item_info SET item_name='".$itemNameP."', category_ID='".$categoryP."', item_price1='".$price1P."',
      item_price2='".$price2P."', item_price3='".$price3P."', item_image='".$targetFilePath."' WHERE item_ID='".$item_ID."' ";
-	
-	if($conn->query($queryUpdate) === TRUE)
-	{
-		echo "<p style='color:gold;'>Record has been updated into database ! </p>";
-		echo "Click <a href='video_view.php'> HERE </a> to view video list";
-	}
-	else
-	{
-		echo"<p style='red;'>Error: Invalid query " .$conn->error. "</p.";
-	}
-	
+    
+    if($conn->query($queryUpdate) === TRUE) {
+        // Redirect back to homepage.php
+        header("Location: /PRICEWIZ/Admin_page/home_page.php");
+        exit();
+    } else {
+        echo"<p style='red;'>Error: Invalid query " .$conn->error. "</p.";
+    }
 }
 $conn->close()
 ?>
 
 </body>
 </html>
-<?php 
-
-?>

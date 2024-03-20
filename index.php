@@ -8,7 +8,6 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.0/TweenMax.min.js"></script>
 
-
             <title>PRICEWIZ</title>
         </head>
         
@@ -17,8 +16,8 @@
                 <section>
                     <?php include 'top_nav.html';?>
                 </section>
-
             </header>
+
             <main>
                 <div class="welcome_div">
                     <div>
@@ -35,11 +34,10 @@
                         Try searching for a specfic item and goods, or even category!
                       </p>
                     </div>
-                </div>
-                  
+                </div>                  
                   <div class = "functional_div">
                     <div>
-                        <div class = "complex_div">
+                        <!-- <div class = "complex_div">
                             <div class = "part1">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 class="pointer-events-none max-h-full max-w-full">
@@ -60,7 +58,7 @@
                             <div class="part2">
                                 <button class="part2_submit">Search</button>
                               </div>
-                            </div>
+                        </div> -->
                             <div class="imageOfCompanies">
                                 <p style="
                                       font-size: 16px;
@@ -68,16 +66,17 @@
                                       font-weight: 700;
                                     ">We compare multiple supermarkets at once
                                 </p>
+                                <br>
                                 <div class="screenShotImg">
                                   <img data-testid="advertiser-image"
-                                    src="https://vectorlogo4u.com/wp-content/uploads/2021/08/lotuss-logo-vector-01.png" alt="Lotus"
-                                    class="flex-grow-0 flex-shrink-0 AdvertiserImage_image__bArcZ" style="height: 150px; width: 300px" />
+                                    src="projectImage\logo_lotus.png" alt="Lotus"
+                                    class="flex-grow-0 flex-shrink-0 AdvertiserImage_image__bArcZ" style="height: 40px; width: 120px" />
                                   <img data-testid="advertiser-image"
-                                    src="projectImage/mydin-logo.png" alt="Mydin"
-                                    class="flex-grow-0 flex-shrink-0 AdvertiserImage_image__bArcZ" style="height: 150px; width: 300px" />
+                                    src="projectImage\Logo_of_Mydin.png" alt="Mydin"
+                                    class="flex-grow-0 flex-shrink-0 AdvertiserImage_image__bArcZ" style="height: 45px; width: 130px" />
                                   <img data-testid="advertiser-image"
                                     src="projectImage/PasarRaya-CS-logo.png" alt="PasarRaya CS"
-                                    class="flex-grow-0 flex-shrink-0 AdvertiserImage_image__bArcZ" style="height: 100px; width: 200px" />
+                                    class="flex-grow-0 flex-shrink-0 AdvertiserImage_image__bArcZ" style="height: 70px; width: 140px" />
                                 
                                 </div>
                               </div>
@@ -87,7 +86,7 @@
                     <div class = "category">
                         <div>
                             <div class = "category_title">
-                                <h4>Category</h4>
+                                <h2>Category</h2>
                             </div>
                             <div>
                                 <div>
@@ -96,7 +95,7 @@
                                         <div id="baby">
                                             <a href="Category/baby_product_page.php" class="category-link">
                                                 <div class="category-container">
-                                                    <img src="projectImage\category_baby_product.jpg" alt="baby product img" style="width: 220; height: 130; border-radius: 10;" />
+                                                    <img src="projectImage\category_baby_product.jpg" alt="baby product img" style="width: 200; height: 110; border-radius: 10;" />
                                                     <p class="titleOfEachCategory">Baby Product</p>
                                                 </div>
                                             </a>
@@ -105,7 +104,7 @@
                                         <div id="beverage">
                                             <a href="Category/beverage_page.php" class="category-link">
                                                 <div class="category-container">
-                                                    <img src="projectImage\category_beverage.jpg" alt="beverage img" style="width: 220; height: 130; border-radius: 10;" />
+                                                    <img src="projectImage\category_beverage.jpg" alt="beverage img" style="width: 200; height: 110; border-radius: 10;" />
                                                     <p class="titleOfEachCategory">Beverage</p>
                                                 </div>
                                             </a>
@@ -114,52 +113,52 @@
                                         <div id="chilled">
                                             <a href="Category/chilled_frozen_page.php" class="category-link">
                                                 <div class="category-container">
-                                                    <img src="projectImage\category_frozen.jpg" alt="chilled img" style="width: 220; height: 130; border-radius: 10;" />
+                                                    <img src="projectImage\category_frozen.jpg" alt="chilled img" style="width: 200; height: 110; border-radius: 10;" />
                                                     <p class="titleOfEachCategory">Chilled & Frozen</p>
                                                 </div>
                                             </a>
                                         </div>
                                     
-                                        <div id="fresh" class="category-link">
-                                            <a href="Category/fresh_page.php">
+                                        <div id="fresh" >
+                                            <a href="Category/fresh_page.php" class="category-link">
                                                 <div class="category-container">
-                                                    <img src="projectImage\category_fresh_product.jpeg" alt="fresh img" style="width: 220; height: 130; border-radius: 10;" />
+                                                    <img src="projectImage\category_fresh_product.jpeg" alt="fresh img" style="width: 200; height: 110; border-radius: 10;" />
                                                     <p class="titleOfEachCategory">Fresh Product</p>
                                                 </div>
                                             </a>
                                         </div>
                                     
-                                        <div id="grocery" class="category-link">
-                                            <a href="Category/grocery_page.php">
+                                        <div id="grocery">
+                                            <a href="Category/grocery_page.php" class="category-link">
                                                 <div class="category-container">
-                                                    <img src="projectImage\category_grocery-removebg-preview.png" alt="grocery img" style="width: 220; height: 130; border-radius: 10;" />
+                                                    <img src="projectImage\category_grocery-removebg-preview.png" alt="grocery img" style="width: 200; height: 110; border-radius: 10;" />
                                                     <p class="titleOfEachCategory">Grocery</p>
                                                 </div>
                                             </a>
                                         </div>
                                     
-                                        <div id="health" class="category-link">
-                                            <a href="Category/health_page.php">
+                                        <div id="health">
+                                            <a href="Category/health_page.php" class="category-link">
                                                 <div class="category-container">
-                                                    <img src="projectImage\category_health.jpg" alt="health img" style="width: 220; height: 130; border-radius: 10;" />
+                                                    <img src="projectImage\category_health.jpg" alt="health img" style="width: 200; height: 110; border-radius: 10;" />
                                                     <p class="titleOfEachCategory">Health & Beauty</p>
                                                 </div>
                                             </a>
                                         </div>
                                     
-                                        <div id="household" class="category-link">
-                                            <a href="Category/household_page.php">
+                                        <div id="household">
+                                            <a href="Category/household_page.php" class="category-link">
                                                 <div class="category-container">
-                                                    <img src="projectImage\category_household.webp" alt="household img" style="width: 220; height: 130; border-radius: 10;" />
+                                                    <img src="projectImage\category_household.webp" alt="household img" style="width: 200; height: 110; border-radius: 10;" />
                                                     <p class="titleOfEachCategory">Household</p>
                                                 </div>
                                             </a>
                                         </div>
                                     
-                                        <div id="meat" class="category-link">
-                                            <a href="Category/meat_page.php">
+                                        <div id="meat">
+                                            <a href="Category/meat_page.php" class="category-link">
                                                 <div class="category-container">
-                                                    <img src="projectImage\category_meat_poultry.jpg" alt="meat img" style="width: 220; height: 130; border-radius: 10;" />
+                                                    <img src="projectImage\category_meat_poultry.jpg" alt="meat img" style="width: 200; height: 110; border-radius: 10;" />
                                                     <p class="titleOfEachCategory">Meat & Poultry</p>
                                                 </div>
                                             </a>

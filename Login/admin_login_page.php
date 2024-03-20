@@ -34,7 +34,7 @@
 							<div class="text w-100">
 								<h2>Welcome to PriceWiz Item Management</h2>
 								<p>Don't have an account?</p>
-								<a href="/PRICEWIZ/Sign Up/admin_signup_page.php" class="btn btn-white btn-outline-white">Sign Up</a>
+								<a href="/PRICEWIZ/SignUp/admin_signup_page.php" class="btn btn-white btn-outline-white">Sign Up</a>
 							</div>
 			      </div>
 						<div class="login-wrap p-4 p-lg-5">
@@ -69,9 +69,7 @@
 										</label>
 									</div>
 									<div class="w-50 text-md-right">
-										<a href="#">Forgot Password</a>
-									</div>
-		            </div>
+									
 		          </form>
 		        </div>
 		      </div>
@@ -81,10 +79,7 @@
 	</section>
 		</main>
 
-	<script src="js/jquery.min.js"></script>
-  <script src="js/popper.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/main.js"></script>
+Z
 
 	</body>
 </html>

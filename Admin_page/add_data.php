@@ -21,91 +21,89 @@
 <div class="formbold-main-wrapper">
   
   <div class="formbold-form-wrapper">
-  
+    
+    
 
-    <form name="add_item.php" action="display_added_item.php" method="POST" enctype="multipart/form-data">
+    <form name="add_item.php" action="display_added_data.php" method="POST" enctype="multipart/form-data">
       <div class="formbold-form-title">
-        <h2 class="">Add New Item</h2>
+        <h2 class="">Add New Dashboard Data</h2>
         <p>
-          Insert details of new item you want to add
+          Insert details of Dashboard Price Trends
         </p>
       </div>
 
       <div class="formbold-mb-3">
         <div>
-          <label for="itemName" class="formbold-form-label">
-            Item Name:
+          <label for="price_date" class="formbold-form-label">
+            Enter a date:
           </label>
           <input
-            type="varchar"
-            name="itemName"
-            id="firstname"
+            type="date"
+            name="price_date"
+            id="price_date"
             class="formbold-form-input"
           />
         </div>
 
       </div>
 
-      <div class="formbold-mb-3">
-      <div>
-        <label for="category" class="formbold-form-label">Choose Category </label>
-        
-        <select class="formbold-form-input" id="int" type="category"name="category">
-            <option value="1">Baby Product</option>
-            <option value="2">Beverage</option>
-            <option value="3">Chilled & Frozen</option>
-            <option value="4">Fresh Product</option>
-            <option value="5">Grocery</option>
-            <option value="6">Health & Beauty</option>
-            <option value="7">Household</option>
-            <option value="8">Meat & Poultry</option>
-        </select>
-
-      </div>
-    </div>
+     
 
     <div class="formbold-input-flex">
         <div>
-          <label for="price1" class="formbold-form-label"> Lotu`s Price </label>
+          <label for="overall" class="formbold-form-label"> Overall: </label>
           <input
-            type="double"
-            name="price1"
-            id="price1"
-            class="formbold-form-input"
-          />
+            type="decimal"
+            name="overall"
+            id="overall"
+            class="formbold-form-input" required/>
         </div>
         <div>
-          <label for="price2" class="formbold-form-label"> Mydin Price </label>
+          <label for="food_beverage" class="formbold-form-label"> Food & Beverage:</label>
           <input
-            type="double"
-            name="price2"
-            id="price2"
-            class="formbold-form-input"
-          />
+            type="decimal"
+            name="food_beverage"
+            id="food_beverage"
+            class="formbold-form-input" required/>
         </div>
         <div>
-          <label for="price3" class="formbold-form-label"> CS Price </label>
+          <label for="housing_utilities" class="formbold-form-label"> Clothing: </label>
           <input
-            type="double"
-            name="price3"
-            id="price3"
-            class="formbold-form-input"
-          />
+            type="decimal"
+            name="housing_utilities"
+            id="housing_utilities"
+            class="formbold-form-input" required/>
         </div>
       </div>
 
-<div class="formbold-mb-3">
-    <div>
-        <label for="itemImage" class="formbold-form-label">Item Image:</label>
-        <input
-            type="file"
-            name="itemImage"
-            id="itemImage"
-            accept="image/*"
-            class="formbold-form-input"
-        />
-    </div>
-</div>
+      <div class="formbold-input-flex">
+        <div>
+          <label for="clothing_footwear" class="formbold-form-label"> Household: </label>
+          <input
+            type="decimal"
+            name="clothing_footwear"
+            id="clothing_footwear"
+            class="formbold-form-input" required/>
+        </div>
+        <div>
+          <label for="furnishings" class="formbold-form-label"> Furnishing: </label>
+          <input
+            type="decimal"
+            name="furnishings"
+            id="furnishings"
+            class="formbold-form-input" required/>
+        </div>
+        <div>
+          <label for="health" class="formbold-form-label"> Health: </label>
+          <input
+            type="decimal"
+            name="health"
+            id="health"
+            class="formbold-form-input" required/>
+        </div>
+      </div>
+
+
 
 
       <div class="formbold-checkbox-wrapper">
@@ -133,7 +131,7 @@
               </span>
             </div>
           </div>
-          I confirm all the details insert above are correct
+          I confirm all the data insert above are correct
           <!-- <a href="#"> terms, conditions, and policies</a> -->
         </label>
       </div>
@@ -142,7 +140,7 @@
       <a href="home_page.php"><button class="formbold-btn">
 		    Return to Item Management</button></a>
       <input class="formbold-btn" type="reset" value="Clear">
-      <input class="formbold-btn" type="submit" value="Add Item">
+      <input class="formbold-btn" type="submit" value="Add Data">
       
       </div>
     </form>
@@ -288,7 +286,7 @@
     padding: 14px 25px;
     border: none;
     font-weight: 500;
-    background-color: #6a64f1;
+    background-color: #258f2d;
     color: white;
     cursor: pointer;
     margin-top: 25px;

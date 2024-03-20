@@ -32,10 +32,11 @@
 					<div class="wrap d-md-flex">
 						<div class="text-wrap p-4 p-lg-5 text-center d-flex align-items-center order-md-last">
 							<div class="text w-100">
-								<div class="icon"><span class="fa fa-soccer-ball-o"></span></div>
+								
 								<h2>Admin Registration</h2>
 								<p>Already have an account?</p>
-								<a href="#" class="btn btn-white btn-outline-white">Sign In</a>
+								<a href="/PRICEWIZ/Login/admin_login_page.php" class="btn btn-white btn-outline-white">Sign In</a>
+
 							</div>
 			      </div>
 						<div class="login-wrap p-4 p-md-5">
@@ -52,11 +53,11 @@
 								required>
 			      		</div>
 			      		<div class="form-group mb-4">
-			      			<label class="label" for="user_name">Username:</label>
+			      			<label class="label" for="name">Username:</label>
 			      			<input 
-								type="varchar"
+								type="text"
 								class="form-control"
-								name="userName"
+								name="user_name"
 								placeholder="JohnSmith22"
 								required>
 
@@ -64,8 +65,8 @@
 		            <div class="form-group mb-4">
 		            	<label class="label" for="password">Password:</label>
 		              <input 
-					  	type="varchar"
-						name="password"
+					  	type="password"
+						name="user_pwd"
 						class="form-control" 
 						placeholder="Password"
 						required>
@@ -76,7 +77,7 @@
 		            </div>
 		          </form>
 		          <div class="w-100 social-wrap">
-					<p class="mt-4">I'm already a member! <a href="/PRICEWIZ/Login/admin_login_page.html">Sign In</a></p>
+					<p class="mt-4">I'm already a member! <a href="..\Login\admin_login_page.php">Sign In</a></p>
 		          </div>
 		        </div>
 		      </div>
@@ -85,6 +86,19 @@
 		</div>
 	</section>
 
+    <script>
+        // Check if registration success message exists in the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const registrationStatus = urlParams.get('registration');
+
+        // If registration is successful, show popup
+        if (registrationStatus === 'success') {
+            alert('Registration successful! You can now sign in.');
+        }
+		else(registrationStatus === 'error') {
+            alert('Registration usuccessful! Please register again.');
+		}
+    </script>
 	<script src="js/jquery.min.js"></script>
   <script src="js/popper.js"></script>
   <script src="js/bootstrap.min.js"></script>
